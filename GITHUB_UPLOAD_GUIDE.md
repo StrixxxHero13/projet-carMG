@@ -136,5 +136,3 @@ Un système complet de gestion de flotte de véhicules construit avec React, Nod
 ## Données d'Exemple Incluses
 L'application vient avec des véhicules, pièces et enregistrements de maintenance d'exemple pour démontrer toutes les fonctionnalités.
 ```
-
-Votre projet est maintenant prêt à être partagé ! Votre ami aura tout ce dont il a besoin pour installer et faire fonctionner le système FleetManager sur son propre ordinateur.

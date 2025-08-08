@@ -1,140 +1,140 @@
-# How to Upload Your FleetManager Project to GitHub
+# Comment Téléverser Votre Projet FleetManager sur GitHub
 
-This guide will help you upload your complete FleetManager project to GitHub so your friend can easily download and set it up.
+Ce guide vous aidera à téléverser votre projet FleetManager complet sur GitHub afin que votre ami puisse facilement le télécharger et l'installer.
 
-## Method 1: Using GitHub Website (Easier for beginners)
+## Méthode 1 : Utiliser le Site Web GitHub (Plus facile pour les débutants)
 
-### Step 1: Create a GitHub Repository
-1. Go to https://github.com
-2. Sign in to your account (or create one if you don't have it)
-3. Click the green "New" button or the "+" icon in the top right
-4. Choose "New repository"
-5. Fill in the details:
-   - Repository name: `FleetManager` (or any name you prefer)
-   - Description: `Vehicle Fleet Management System with React and Node.js`
-   - Make it **Public** (so your friend can access it)
-   - Check "Add a README file"
-6. Click "Create repository"
+### Étape 1 : Créer un Dépôt GitHub
+1. Allez sur https://github.com
+2. Connectez-vous à votre compte (ou créez-en un si vous n'en avez pas)
+3. Cliquez sur le bouton vert "New" ou l'icône "+" en haut à droite
+4. Choisissez "New repository"
+5. Remplissez les détails :
+   - Nom du dépôt : `FleetManager` (ou tout nom que vous préférez)
+   - Description : `Système de Gestion de Flotte de Véhicules avec React et Node.js`
+   - Rendez-le **Public** (pour que votre ami puisse y accéder)
+   - Cochez "Add a README file"
+6. Cliquez sur "Create repository"
 
-### Step 2: Upload Your Files
-1. In your new repository, click "uploading an existing file"
-2. Drag and drop ALL files from your FleetManager folder
-3. OR click "choose your files" and select all files
-4. Add a commit message: "Initial upload of FleetManager project"
-5. Click "Commit changes"
+### Étape 2 : Téléverser Vos Fichiers
+1. Dans votre nouveau dépôt, cliquez sur "uploading an existing file"
+2. Glissez-déposez TOUS les fichiers de votre dossier FleetManager
+3. OU cliquez sur "choose your files" et sélectionnez tous les fichiers
+4. Ajoutez un message de commit : "Téléversement initial du projet FleetManager"
+5. Cliquez sur "Commit changes"
 
-## Method 2: Using Git (If you have Git installed)
+## Méthode 2 : Utiliser Git (Si vous avez Git installé)
 
-### Step 1: Initialize Git in Your Project
-Open terminal in your FleetManager folder and run:
+### Étape 1 : Initialiser Git dans Votre Projet
+Ouvrez le terminal dans votre dossier FleetManager et exécutez :
 
 ```bash
 git init
 git add .
-git commit -m "Initial commit: FleetManager vehicle management system"
+git commit -m "Commit initial : système de gestion de véhicules FleetManager"
 ```
 
-### Step 2: Connect to GitHub
-Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual details:
+### Étape 2 : Se Connecter à GitHub
+Remplacez `VOTRE_NOM_UTILISATEUR` et `VOTRE_NOM_DEPOT` par vos détails réels :
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git remote add origin https://github.com/VOTRE_NOM_UTILISATEUR/VOTRE_NOM_DEPOT.git
 git branch -M main
 git push -u origin main
 ```
 
-## What to Share with Your Friend
+## Que Partager avec Votre Ami
 
-Once uploaded, share this with your friend:
+Une fois téléversé, partagez ceci avec votre ami :
 
-### Repository Link
-Give them: `https://github.com/YOUR_USERNAME/YOUR_REPO_NAME`
+### Lien du Dépôt
+Donnez-lui : `https://github.com/VOTRE_NOM_UTILISATEUR/VOTRE_NOM_DEPOT`
 
-### Instructions for Your Friend
-Tell them to:
+### Instructions pour Votre Ami
+Dites-lui de :
 
-1. **Download the project:**
-   - Go to your GitHub repository
-   - Click the green "Code" button
-   - Select "Download ZIP"
-   - Extract the ZIP file
+1. **Télécharger le projet :**
+   - Aller sur votre dépôt GitHub
+   - Cliquer sur le bouton vert "Code"
+   - Sélectionner "Download ZIP"
+   - Extraire le fichier ZIP
 
-2. **Follow the setup guide:**
-   - Open the `SETUP_GUIDE.md` file in the downloaded folder
-   - Follow every step carefully
-   - The guide includes everything needed to get it running
+2. **Suivre le guide d'installation :**
+   - Ouvrir le fichier `SETUP_GUIDE.md` dans le dossier téléchargé
+   - Suivre chaque étape attentivement
+   - Le guide inclut tout ce qui est nécessaire pour le faire fonctionner
 
-## Files Included in Your Project
+## Fichiers Inclus dans Votre Projet
 
-Your repository now contains:
+Votre dépôt contient maintenant :
 
-### Core Application Files
-- `package.json` - Project dependencies and scripts
-- `server/` - Backend Express.js application
-- `client/` - Frontend React application
-- `shared/` - Shared TypeScript types and database schema
-- `vite.config.ts` - Build configuration
-- `tailwind.config.ts` - Styling configuration
+### Fichiers d'Application Principaux
+- `package.json` - Dépendances et scripts du projet
+- `server/` - Application backend Express.js
+- `client/` - Application frontend React
+- `shared/` - Types TypeScript partagés et schéma de base de données
+- `vite.config.ts` - Configuration de build
+- `tailwind.config.ts` - Configuration de style
 
-### Setup and Documentation
-- `SETUP_GUIDE.md` - Complete step-by-step setup instructions
-- `GITHUB_UPLOAD_GUIDE.md` - This file
-- `README.md` - Project overview
-- `replit.md` - Technical documentation
-- `.env.example` - Environment configuration template
+### Installation et Documentation
+- `SETUP_GUIDE.md` - Instructions complètes d'installation étape par étape
+- `GITHUB_UPLOAD_GUIDE.md` - Ce fichier
+- `README.md` - Vue d'ensemble du projet
+- `replit.md` - Documentation technique
+- `.env.example` - Modèle de configuration d'environnement
 
-### Database and Configuration
-- `drizzle.config.ts` - Database migration configuration
-- Database schema in `shared/schema.ts`
-- All necessary dependencies in `package.json`
+### Base de Données et Configuration
+- `drizzle.config.ts` - Configuration de migration de base de données
+- Schéma de base de données dans `shared/schema.ts`
+- Toutes les dépendances nécessaires dans `package.json`
 
-## Important Notes for Your Friend
+## Notes Importantes pour Votre Ami
 
-Make sure your friend knows:
+Assurez-vous que votre ami sait :
 
-1. **They need to follow the SETUP_GUIDE.md exactly** - it includes:
-   - Installing Node.js
-   - Installing PostgreSQL database
-   - Setting up database credentials
-   - Installing project dependencies
-   - Starting the application
+1. **Il doit suivre le SETUP_GUIDE.md exactement** - il inclut :
+   - Installation de Node.js
+   - Installation de la base de données PostgreSQL
+   - Configuration des identifiants de base de données
+   - Installation des dépendances du projet
+   - Démarrage de l'application
 
-2. **The application includes sample data** so they can see it working immediately
+2. **L'application inclut des données d'exemple** pour qu'il puisse la voir fonctionner immédiatement
 
-3. **Everything is documented** - if they get stuck, the troubleshooting section covers common issues
+3. **Tout est documenté** - s'il reste bloqué, la section dépannage couvre les problèmes courants
 
-4. **No programming knowledge required** - just ability to follow terminal commands
+4. **Aucune connaissance en programmation requise** - juste la capacité de suivre les commandes du terminal
 
-## Sample README for Your Repository
+## Exemple de README pour Votre Dépôt
 
-Here's what you can add to your repository's README:
+Voici ce que vous pouvez ajouter au README de votre dépôt :
 
 ```markdown
-# FleetManager - Vehicle Management System
+# FleetManager - Système de Gestion de Véhicules
 
-A comprehensive vehicle fleet management system built with React, Node.js, and PostgreSQL.
+Un système complet de gestion de flotte de véhicules construit avec React, Node.js et PostgreSQL.
 
-## Features
-- Vehicle tracking and status management
-- Maintenance scheduling and history
-- Parts inventory management
-- Automated maintenance alerts
-- Interactive chat assistant
-- Dashboard with fleet overview
+## Fonctionnalités
+- Suivi et gestion du statut des véhicules
+- Planification et historique de maintenance
+- Gestion de l'inventaire des pièces
+- Alertes automatisées de maintenance
+- Assistant de chat interactif
+- Tableau de bord avec vue d'ensemble de la flotte
 
-## Quick Start
-1. Download this repository
-2. Follow the complete setup instructions in `SETUP_GUIDE.md`
-3. The guide includes everything needed to get it running locally
+## Démarrage Rapide
+1. Téléchargez ce dépôt
+2. Suivez les instructions complètes d'installation dans `SETUP_GUIDE.md`
+3. Le guide inclut tout ce qui est nécessaire pour le faire fonctionner localement
 
-## Tech Stack
-- Frontend: React 18, TypeScript, Tailwind CSS, Radix UI
-- Backend: Node.js, Express.js, TypeScript
-- Database: PostgreSQL with Drizzle ORM
-- Build Tools: Vite for development and production builds
+## Stack Technique
+- Frontend : React 18, TypeScript, Tailwind CSS, Radix UI
+- Backend : Node.js, Express.js, TypeScript
+- Base de Données : PostgreSQL avec Drizzle ORM
+- Outils de Build : Vite pour le développement et les builds de production
 
-## Sample Data Included
-The application comes with sample vehicles, parts, and maintenance records to demonstrate all features.
+## Données d'Exemple Incluses
+L'application vient avec des véhicules, pièces et enregistrements de maintenance d'exemple pour démontrer toutes les fonctionnalités.
 ```
 
-Your project is now ready to be shared! Your friend will have everything they need to set up and run the FleetManager system on their own computer.
+Votre projet est maintenant prêt à être partagé ! Votre ami aura tout ce dont il a besoin pour installer et faire fonctionner le système FleetManager sur son propre ordinateur.

@@ -1,155 +1,155 @@
-# FleetManager - Vehicle Management System
+# FleetManager - Système de Gestion de Véhicules
 
-A comprehensive vehicle fleet management system built with React, Node.js, and PostgreSQL. This application helps manage vehicle fleets, track maintenance schedules, monitor parts inventory, provides automated alerts for preventive maintenance, and includes intelligent vehicle status validation.
+Un système complet de gestion de flotte de véhicules construit avec React, Node.js et PostgreSQL. Cette application aide à gérer les flottes de véhicules, suivre les calendriers de maintenance, surveiller l'inventaire des pièces, fournit des alertes automatisées pour la maintenance préventive, et inclut une validation intelligente du statut des véhicules.
 
-## 🚗 Features
+## 🚗 Fonctionnalités
 
-### Vehicle Management
-- Track all vehicles in your fleet
-- **Intelligent Status Validation**: Automatic assessment of vehicle operational status
-- Monitor vehicle status (operational, maintenance due, in repair)
-- Store detailed vehicle information (plate, model, make, year, mileage)
-- Real-time status updates based on maintenance history and alerts
-- Comprehensive vehicle details with maintenance statistics
+### Gestion des Véhicules
+- Suivre tous les véhicules de votre flotte
+- **Validation Intelligente du Statut** : Évaluation automatique du statut opérationnel des véhicules
+- Surveiller le statut des véhicules (opérationnel, maintenance due, en réparation)
+- Stocker les informations détaillées des véhicules (plaque, modèle, marque, année, kilométrage)
+- Mises à jour en temps réel basées sur l'historique de maintenance et les alertes
+- Détails complets des véhicules avec statistiques de maintenance
 
-### Maintenance Scheduling
-- Schedule and track maintenance activities
-- Complete maintenance history for each vehicle
-- Cost and duration tracking
-- Technician assignment
-- Automated maintenance reminders
+### Planification de Maintenance
+- Planifier et suivre les activités de maintenance
+- Historique complet de maintenance pour chaque véhicule
+- Suivi des coûts et de la durée
+- Attribution des techniciens
+- Rappels automatisés de maintenance
 
-### Parts Inventory
-- Comprehensive parts catalog
-- Stock level monitoring
-- Low stock alerts
-- Part usage tracking across maintenance activities
-- Cost management
+### Inventaire des Pièces
+- Catalogue complet des pièces
+- Surveillance des niveaux de stock
+- Alertes de stock faible
+- Suivi de l'utilisation des pièces à travers les activités de maintenance
+- Gestion des coûts
 
-### Smart Alerts
-- Automated maintenance due notifications
-- Overdue maintenance warnings
-- Low stock alerts for parts
-- Priority-based alert system
+### Alertes Intelligentes
+- Notifications automatisées de maintenance due
+- Avertissements de maintenance en retard
+- Alertes de stock faible pour les pièces
+- Système d'alertes basé sur les priorités
 
-### Interactive Chat Assistant
-- Ask questions about your fleet
-- Get instant vehicle status updates
-- Check maintenance schedules
-- Query parts inventory
-- Quick fleet statistics
-- Intelligent responses with fallback suggestions
+### Assistant de Chat Interactif
+- Poser des questions sur votre flotte
+- Obtenir des mises à jour instantanées du statut des véhicules
+- Vérifier les calendriers de maintenance
+- Consulter l'inventaire des pièces
+- Statistiques rapides de la flotte
+- Réponses intelligentes avec suggestions de secours
 
-### Advanced Search & Filtering
-- **Intelligent Vehicle Search**: Live search with navigation to relevant pages, detailed results, and clear visual cues
-- **Comprehensive History Filtering**: Filter by vehicle, maintenance type, and date ranges
-- **Task-List Validation**: Vehicles disappear from validation list once operational
-- **Reset Functionality**: Quick filter clearing
+### Recherche et Filtrage Avancés
+- **Recherche Intelligente de Véhicules** : Recherche en direct avec navigation vers les pages pertinentes, résultats détaillés et indices visuels clairs
+- **Filtrage Complet de l'Historique** : Filtrer par véhicule, type de maintenance et plages de dates
+- **Validation en Liste de Tâches** : Les véhicules disparaissent de la liste de validation une fois opérationnels
+- **Fonctionnalité de Réinitialisation** : Effacement rapide des filtres
 
-### Dashboard Overview
-- Fleet statistics at a glance
-- Recent alerts and notifications
-- Maintenance schedule overview
-- Parts inventory summary
+### Vue d'Ensemble du Tableau de Bord
+- Statistiques de la flotte en un coup d'œil
+- Alertes et notifications récentes
+- Vue d'ensemble du calendrier de maintenance
+- Résumé de l'inventaire des pièces
 
-## 🛠 Tech Stack
+## 🛠 Stack Technique
 
-- **Frontend**: React 18, TypeScript, Tailwind CSS, Radix UI components
-- **Backend**: Node.js, Express.js, TypeScript
-- **Database**: PostgreSQL with Drizzle ORM
-- **Build Tools**: Vite for development and production
-- **UI Framework**: shadcn/ui component library
-- **State Management**: TanStack Query for server state
+- **Frontend** : React 18, TypeScript, Tailwind CSS, composants Radix UI
+- **Backend** : Node.js, Express.js, TypeScript
+- **Base de Données** : PostgreSQL avec Drizzle ORM
+- **Outils de Build** : Vite pour le développement et la production
+- **Framework UI** : bibliothèque de composants shadcn/ui
+- **Gestion d'État** : TanStack Query pour l'état serveur
 
-## 🚀 Quick Start
+## 🚀 Démarrage Rapide
 
-**Important**: This project requires some technical setup. Follow the complete guide in `SETUP_GUIDE.md` for detailed instructions.
+**Important** : Ce projet nécessite une configuration technique. Suivez le guide complet dans `SETUP_GUIDE.md` pour des instructions détaillées.
 
-### Prerequisites
-- Node.js (LTS version)
-- PostgreSQL database
-- Git (optional)
+### Prérequis
+- Node.js (version LTS)
+- Base de données PostgreSQL
+- Git (optionnel)
 
 ### Installation
-1. Download or clone this repository
-2. Open the `SETUP_GUIDE.md` file
-3. Follow the step-by-step instructions exactly
-4. The guide covers everything from installing dependencies to running the application
+1. Téléchargez ou clonez ce dépôt
+2. Ouvrez le fichier `SETUP_GUIDE.md`
+3. Suivez exactement les instructions étape par étape
+4. Le guide couvre tout, de l'installation des dépendances au lancement de l'application
 
-## 📁 Project Structure
+## 📁 Structure du Projet
 
 ```
 FleetManager/
-├── client/                 # React frontend application
+├── client/                 # Application frontend React
 │   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Application pages
-│   │   ├── lib/           # Utilities and configurations
-│   │   └── hooks/         # Custom React hooks
-├── server/                # Express.js backend
-│   ├── routes.ts          # API route definitions
-│   ├── storage.ts         # Database operations
-│   └── db.ts             # Database connection
-├── shared/                # Shared TypeScript types
-│   └── schema.ts          # Database schema and types
-├── SETUP_GUIDE.md        # Complete setup instructions
-└── package.json          # Dependencies and scripts
+│   │   ├── components/     # Composants UI réutilisables
+│   │   ├── pages/          # Pages de l'application
+│   │   ├── lib/           # Utilitaires et configurations
+│   │   └── hooks/         # Hooks React personnalisés
+├── server/                # Backend Express.js
+│   ├── routes.ts          # Définitions des routes API
+│   ├── storage.ts         # Opérations de base de données
+│   └── db.ts             # Connexion à la base de données
+├── shared/                # Types TypeScript partagés
+│   └── schema.ts          # Schéma et types de base de données
+├── SETUP_GUIDE.md        # Instructions complètes d'installation
+└── package.json          # Dépendances et scripts
 ```
 
-## 🎯 Usage
+## 🎯 Utilisation
 
-After setup, the application provides:
+Après l'installation, l'application fournit :
 
-1. **Dashboard** - Overview of your entire fleet with real-time statistics
-2. **Vehicles** - Manage individual vehicles and their status with detailed views
-3. **Maintenance** - Schedule and track maintenance activities with cost tracking
-4. **Parts** - Monitor inventory and stock levels with automated alerts
-5. **History** - Complete maintenance history with advanced filtering
-6. **Validation** - Dedicated vehicle status validation with task-list interface
-7. **Chat** - Interactive assistant for quick fleet management queries
+1. **Tableau de Bord** - Vue d'ensemble de votre flotte entière avec statistiques en temps réel
+2. **Véhicules** - Gérer les véhicules individuels et leur statut avec vues détaillées
+3. **Maintenance** - Planifier et suivre les activités de maintenance avec suivi des coûts
+4. **Pièces** - Surveiller l'inventaire et les niveaux de stock avec alertes automatisées
+5. **Historique** - Historique complet de maintenance avec filtrage avancé
+6. **Validation** - Validation dédiée du statut des véhicules avec interface en liste de tâches
+7. **Chat** - Assistant interactif pour les requêtes rapides de gestion de flotte
 
-## 📊 Sample Data
+## 📊 Données d'Exemple
 
-The application includes sample data to demonstrate features:
-- 3 sample vehicles (different makes and status)
-- Parts inventory with various stock levels
-- Maintenance records and history
-- Active alerts and notifications
+L'application inclut des données d'exemple pour démontrer les fonctionnalités :
+- 3 véhicules d'exemple (différentes marques et statuts)
+- Inventaire de pièces avec divers niveaux de stock
+- Enregistrements et historique de maintenance
+- Alertes et notifications actives
 
 ## 🔧 Configuration
 
-The application uses environment variables for configuration. See `.env.example` for required settings:
+L'application utilise des variables d'environnement pour la configuration. Voir `.env.example` pour les paramètres requis :
 
-- `DATABASE_URL` - PostgreSQL connection string
-- `NODE_ENV` - Environment (development/production)
-- `PORT` - Application port (default: 5000)
+- `DATABASE_URL` - Chaîne de connexion PostgreSQL
+- `NODE_ENV` - Environnement (development/production)
+- `PORT` - Port de l'application (par défaut : 5000)
 
 ## 📖 Documentation
 
-- `SETUP_GUIDE.md` - Complete setup instructions for any computer
-- `GITHUB_UPLOAD_GUIDE.md` - Instructions for sharing this project
-- `replit.md` - Technical architecture documentation
+- `SETUP_GUIDE.md` - Instructions complètes d'installation pour n'importe quel ordinateur
+- `GITHUB_UPLOAD_GUIDE.md` - Instructions pour partager ce projet
+- `replit.md` - Documentation de l'architecture technique
 
-## 🆘 Troubleshooting
+## 🆘 Dépannage
 
-Common issues and solutions are covered in the `SETUP_GUIDE.md` file. Most problems relate to:
-- Database connection issues
-- Missing dependencies
-- Port conflicts
-- Environment configuration
+Les problèmes courants et leurs solutions sont couverts dans le fichier `SETUP_GUIDE.md`. La plupart des problèmes sont liés à :
+- Problèmes de connexion à la base de données
+- Dépendances manquantes
+- Conflits de ports
+- Configuration d'environnement
 
-## 🎓 Learning Project
+## 🎓 Projet Éducatif
 
-This project was created as a school assignment and demonstrates:
-- Full-stack web development
-- Database design and management
-- RESTful API development
-- Modern React patterns
-- TypeScript usage throughout
-- Professional code organization
+Ce projet a été créé comme un devoir scolaire et démontre :
+- Développement web full-stack
+- Conception et gestion de base de données
+- Développement d'API RESTful
+- Patterns React modernes
+- Utilisation de TypeScript partout
+- Organisation professionnelle du code
 
-Perfect for learning modern web development practices!
+Parfait pour apprendre les pratiques modernes de développement web !
 
-## 📄 License
+## 📄 Licence
 
-This project is created for educational purposes.
+Ce projet est créé à des fins éducatives.

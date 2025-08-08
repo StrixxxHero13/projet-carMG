@@ -1,83 +1,83 @@
-# FleetManager - Complete Setup Guide
+# FleetManager - Guide d'Installation Complet
 
-This guide will help you set up the FleetManager vehicle management system on your computer from scratch. Follow each step carefully, and you'll have a working application at the end.
+Ce guide vous aidera à installer le système de gestion de véhicules FleetManager sur votre ordinateur depuis le début. Suivez chaque étape attentivement, et vous aurez une application fonctionnelle à la fin.
 
-## What You'll Get
+## Ce que Vous Obtiendrez
 
-After following this guide, you'll have:
-- A complete vehicle management system running on your computer
-- A modern web interface to manage vehicles, parts, and maintenance
-- Intelligent vehicle status validation system
-- Advanced search and filtering capabilities  
-- A chat assistant to help with fleet management
-- A local database with sample data to get started
+Après avoir suivi ce guide, vous aurez :
+- Un système complet de gestion de véhicules fonctionnant sur votre ordinateur
+- Une interface web moderne pour gérer les véhicules, pièces et maintenance
+- Système intelligent de validation du statut des véhicules
+- Capacités avancées de recherche et filtrage
+- Un assistant de chat pour aider avec la gestion de flotte
+- Une base de données locale avec des données d'exemple pour commencer
 
-## Prerequisites
+## Prérequis
 
-You need to have basic knowledge of:
-- How to open a terminal/command prompt
-- How to copy and paste commands
-- How to download files from the internet
+Vous devez avoir des connaissances de base sur :
+- Comment ouvrir un terminal/invite de commande
+- Comment copier et coller des commandes
+- Comment télécharger des fichiers depuis internet
 
-## Step 1: Install Node.js
+## Étape 1 : Installer Node.js
 
-Node.js is the runtime that powers this application.
+Node.js est l'environnement d'exécution qui alimente cette application.
 
-### For Windows:
-1. Go to https://nodejs.org/
-2. Download the "LTS" version (recommended for most users)
-3. Run the installer and follow the setup wizard
-4. Accept all default options
+### Pour Windows :
+1. Allez sur https://nodejs.org/
+2. Téléchargez la version "LTS" (recommandée pour la plupart des utilisateurs)
+3. Lancez l'installateur et suivez l'assistant d'installation
+4. Acceptez toutes les options par défaut
 
-### For Mac:
-1. Go to https://nodejs.org/
-2. Download the "LTS" version for macOS
-3. Open the downloaded .pkg file and follow the installer
-4. Accept all default options
+### Pour Mac :
+1. Allez sur https://nodejs.org/
+2. Téléchargez la version "LTS" pour macOS
+3. Ouvrez le fichier .pkg téléchargé et suivez l'installateur
+4. Acceptez toutes les options par défaut
 
-### For Linux:
-Open terminal and run:
+### Pour Linux :
+Ouvrez le terminal et exécutez :
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-### Verify Installation:
-Open terminal/command prompt and type:
+### Vérifier l'Installation :
+Ouvrez le terminal/invite de commande et tapez :
 ```bash
 node --version
 npm --version
 ```
 
-You should see version numbers for both commands.
+Vous devriez voir les numéros de version pour les deux commandes.
 
-## Step 2: Install PostgreSQL Database
+## Étape 2 : Installer la Base de Données PostgreSQL
 
-PostgreSQL is the database system that stores all your vehicle data.
+PostgreSQL est le système de base de données qui stocke toutes vos données de véhicules.
 
-### For Windows:
-1. Go to https://www.postgresql.org/download/windows/
-2. Download the installer for Windows
-3. Run the installer
-4. **IMPORTANT**: Remember the password you set for the "postgres" user
-5. Accept default port (5432)
-6. Accept default data directory
-7. Complete the installation
+### Pour Windows :
+1. Allez sur https://www.postgresql.org/download/windows/
+2. Téléchargez l'installateur pour Windows
+3. Lancez l'installateur
+4. **IMPORTANT** : Retenez le mot de passe que vous définissez pour l'utilisateur "postgres"
+5. Acceptez le port par défaut (5432)
+6. Acceptez le répertoire de données par défaut
+7. Terminez l'installation
 
-### For Mac:
-1. Go to https://postgresapp.com/
-2. Download Postgres.app
-3. Move it to Applications folder
-4. Open Postgres.app
-5. Click "Initialize" to create a new server
+### Pour Mac :
+1. Allez sur https://postgresapp.com/
+2. Téléchargez Postgres.app
+3. Déplacez-le dans le dossier Applications
+4. Ouvrez Postgres.app
+5. Cliquez sur "Initialize" pour créer un nouveau serveur
 
-**Alternative for Mac using Homebrew:**
+**Alternative pour Mac en utilisant Homebrew :**
 ```bash
 brew install postgresql
 brew services start postgresql
 ```
 
-### For Linux (Ubuntu/Debian):
+### Pour Linux (Ubuntu/Debian) :
 ```bash
 sudo apt update
 sudo apt install postgresql postgresql-contrib
@@ -85,62 +85,62 @@ sudo systemctl start postgresql
 sudo systemctl enable postgresql
 ```
 
-### Set Up Database:
-After installation, open terminal and run:
+### Configurer la Base de Données :
+Après l'installation, ouvrez le terminal et exécutez :
 
-**Windows:**
+**Windows :**
 ```bash
-# Open psql (you'll be prompted for the password you set)
+# Ouvrir psql (vous serez invité à saisir le mot de passe que vous avez défini)
 psql -U postgres -h localhost
 ```
 
-**Mac/Linux:**
+**Mac/Linux :**
 ```bash
-# Connect to PostgreSQL
+# Se connecter à PostgreSQL
 sudo -u postgres psql
 ```
 
-Once in PostgreSQL, run these commands:
+Une fois dans PostgreSQL, exécutez ces commandes :
 ```sql
--- Create a database for the application
+-- Créer une base de données pour l'application
 CREATE DATABASE fleetmanager;
 
--- Create a user for the application
+-- Créer un utilisateur pour l'application
 CREATE USER fleetuser WITH PASSWORD 'fleetpass123';
 
--- Grant permissions
+-- Accorder les permissions
 GRANT ALL PRIVILEGES ON DATABASE fleetmanager TO fleetuser;
 
--- Exit PostgreSQL
+-- Quitter PostgreSQL
 \q
 ```
 
-## Step 3: Download the Project
+## Étape 3 : Télécharger le Projet
 
-You have two options:
+Vous avez deux options :
 
-### Option A: Download ZIP (Easier)
-1. Go to your project's GitHub page
-2. Click the green "Code" button
-3. Select "Download ZIP"
-4. Extract the ZIP file to a folder (e.g., Desktop/FleetManager)
+### Option A : Télécharger le ZIP (Plus facile)
+1. Allez sur la page GitHub de votre projet
+2. Cliquez sur le bouton vert "Code"
+3. Sélectionnez "Download ZIP"
+4. Extrayez le fichier ZIP dans un dossier (par ex., Bureau/FleetManager)
 
-### Option B: Clone with Git
-If you have Git installed:
+### Option B : Cloner avec Git
+Si vous avez Git installé :
 ```bash
-git clone [YOUR_PROJECT_URL]
-cd [PROJECT_FOLDER_NAME]
+git clone [URL_DE_VOTRE_PROJET]
+cd [NOM_DU_DOSSIER_PROJET]
 ```
 
-## Step 4: Configure the Application
+## Étape 4 : Configurer l'Application
 
-1. Open terminal/command prompt
-2. Navigate to your project folder:
+1. Ouvrez le terminal/invite de commande
+2. Naviguez vers votre dossier de projet :
 ```bash
-cd path/to/your/FleetManager/folder
+cd chemin/vers/votre/dossier/FleetManager
 ```
 
-3. Create a configuration file by copying the example:
+3. Créez un fichier de configuration en copiant l'exemple :
 ```bash
 # Windows
 copy .env.example .env
@@ -149,148 +149,148 @@ copy .env.example .env
 cp .env.example .env
 ```
 
-4. Open the `.env` file in a text editor and add:
+4. Ouvrez le fichier `.env` dans un éditeur de texte et ajoutez :
 ```
 DATABASE_URL=postgresql://fleetuser:fleetpass123@localhost:5432/fleetmanager
 NODE_ENV=development
 PORT=5000
 ```
 
-**Note**: If you used different credentials in Step 2, update the DATABASE_URL accordingly.
+**Note** : Si vous avez utilisé des identifiants différents à l'Étape 2, mettez à jour le DATABASE_URL en conséquence.
 
-## Step 5: Install Project Dependencies
+## Étape 5 : Installer les Dépendances du Projet
 
-In your terminal, make sure you're in the project folder and run:
+Dans votre terminal, assurez-vous d'être dans le dossier du projet et exécutez :
 
 ```bash
 npm install
 ```
 
-This will download all the necessary packages. It might take a few minutes.
+Cela téléchargera tous les packages nécessaires. Cela peut prendre quelques minutes.
 
-## Step 6: Set Up the Database Tables
+## Étape 6 : Configurer les Tables de Base de Données
 
-Run this command to create all the necessary tables:
+Exécutez cette commande pour créer toutes les tables nécessaires :
 
 ```bash
 npm run db:push
 ```
 
-You should see a success message saying "Changes applied".
+Vous devriez voir un message de succès indiquant "Changes applied".
 
-## Step 7: Start the Application
+## Étape 7 : Démarrer l'Application
 
-Now you can start the application:
+Maintenant vous pouvez démarrer l'application :
 
 ```bash
 npm run dev
 ```
 
-You should see messages like:
+Vous devriez voir des messages comme :
 ```
 serving on port 5000
 ```
 
-## Step 8: Access the Application
+## Étape 8 : Accéder à l'Application
 
-1. Open your web browser
-2. Go to: http://localhost:5000
-3. You should see the FleetManager dashboard
+1. Ouvrez votre navigateur web
+2. Allez sur : http://localhost:5000
+3. Vous devriez voir le tableau de bord FleetManager
 
-## What You Can Do
+## Ce que Vous Pouvez Faire
 
-The application includes:
+L'application inclut :
 
-### Dashboard
-- Overview of all vehicles and their status
-- Recent maintenance alerts
-- Parts inventory summary
+### Tableau de Bord
+- Vue d'ensemble de tous les véhicules et leur statut
+- Alertes de maintenance récentes
+- Résumé de l'inventaire des pièces
 
-### Vehicles Section
-- View all vehicles in your fleet
-- Add new vehicles
-- Update vehicle information
-- Track vehicle status (operational, maintenance due, in repair)
+### Section Véhicules
+- Voir tous les véhicules de votre flotte
+- Ajouter de nouveaux véhicules
+- Mettre à jour les informations des véhicules
+- Suivre le statut des véhicules (opérationnel, maintenance due, en réparation)
 
-### Maintenance Section
-- Schedule maintenance for vehicles
-- View maintenance history
-- Track costs and duration
-- Assign technicians
+### Section Maintenance
+- Planifier la maintenance des véhicules
+- Voir l'historique de maintenance
+- Suivre les coûts et la durée
+- Assigner les techniciens
 
-### Parts Inventory
-- Manage spare parts stock
-- Track low stock items
-- Add new parts to inventory
-- Monitor part usage
+### Inventaire des Pièces
+- Gérer le stock de pièces de rechange
+- Suivre les articles en stock faible
+- Ajouter de nouvelles pièces à l'inventaire
+- Surveiller l'utilisation des pièces
 
-### Validation System
-- Intelligent vehicle status assessment
-- Task-list interface - validated vehicles disappear
-- Comprehensive status analysis based on maintenance history
-- Bulk validation operations
+### Système de Validation
+- Évaluation intelligente du statut des véhicules
+- Interface en liste de tâches - les véhicules validés disparaissent
+- Analyse complète du statut basée sur l'historique de maintenance
+- Opérations de validation en lot
 
-### Chat Assistant
-- Ask questions about your fleet
-- Get quick vehicle status updates
-- Check maintenance alerts
-- Inquire about parts inventory
-- Intelligent fallback responses
+### Assistant de Chat
+- Poser des questions sur votre flotte
+- Obtenir des mises à jour rapides du statut des véhicules
+- Vérifier les alertes de maintenance
+- S'enquérir de l'inventaire des pièces
+- Réponses intelligentes de secours
 
-## Sample Data
+## Données d'Exemple
 
-The application comes with sample data:
-- 3 sample vehicles (Renault Master, Peugeot Partner, Ford Transit)
-- Parts inventory with different stock levels
-- Maintenance records and alerts
+L'application vient avec des données d'exemple :
+- 3 véhicules d'exemple (Renault Master, Peugeot Partner, Ford Transit)
+- Inventaire de pièces avec différents niveaux de stock
+- Enregistrements de maintenance et alertes
 
-## Troubleshooting
+## Dépannage
 
-### "Database connection failed"
-- Make sure PostgreSQL is running
-- Check your DATABASE_URL in the .env file
-- Verify your database credentials
+### "Échec de connexion à la base de données"
+- Assurez-vous que PostgreSQL fonctionne
+- Vérifiez votre DATABASE_URL dans le fichier .env
+- Vérifiez vos identifiants de base de données
 
-### "Port 5000 is already in use"
-- Change the PORT in your .env file to a different number (e.g., 3000)
-- Or stop any other applications using port 5000
+### "Le port 5000 est déjà utilisé"
+- Changez le PORT dans votre fichier .env vers un numéro différent (par ex., 3000)
+- Ou arrêtez toute autre application utilisant le port 5000
 
-### "npm command not found"
-- Make sure Node.js is properly installed
-- Restart your terminal
-- Try: `node --version` to verify installation
+### "commande npm introuvable"
+- Assurez-vous que Node.js est correctement installé
+- Redémarrez votre terminal
+- Essayez : `node --version` pour vérifier l'installation
 
-### Application won't start
-- Make sure you're in the correct project folder
-- Try: `npm install` again
-- Check for any error messages
+### L'application ne démarre pas
+- Assurez-vous d'être dans le bon dossier de projet
+- Essayez : `npm install` à nouveau
+- Vérifiez les messages d'erreur
 
-### Database tables don't exist
-- Run: `npm run db:push` again
-- Make sure your database connection is working
+### Les tables de base de données n'existent pas
+- Exécutez : `npm run db:push` à nouveau
+- Assurez-vous que votre connexion à la base de données fonctionne
 
-## Getting Help
+## Obtenir de l'Aide
 
-If you encounter any issues:
-1. Check the troubleshooting section above
-2. Make sure all prerequisites are properly installed
-3. Verify all commands were run in the correct order
-4. Check that the database is running and accessible
+Si vous rencontrez des problèmes :
+1. Vérifiez la section dépannage ci-dessus
+2. Assurez-vous que tous les prérequis sont correctement installés
+3. Vérifiez que toutes les commandes ont été exécutées dans le bon ordre
+4. Vérifiez que la base de données fonctionne et est accessible
 
-## Stopping the Application
+## Arrêter l'Application
 
-To stop the application:
-- Press `Ctrl + C` in the terminal where it's running
+Pour arrêter l'application :
+- Appuyez sur `Ctrl + C` dans le terminal où elle fonctionne
 
-To restart:
-- Run `npm run dev` again
+Pour redémarrer :
+- Exécutez `npm run dev` à nouveau
 
-## Next Steps
+## Prochaines Étapes
 
-Once everything is working:
-1. Clear the sample data and add your own vehicles
-2. Set up your parts inventory
-3. Start scheduling maintenance for your fleet
-4. Explore the chat assistant features
+Une fois que tout fonctionne :
+1. Effacez les données d'exemple et ajoutez vos propres véhicules
+2. Configurez votre inventaire de pièces
+3. Commencez à planifier la maintenance de votre flotte
+4. Explorez les fonctionnalités de l'assistant de chat
 
-Your FleetManager is now ready to use!
+Votre FleetManager est maintenant prêt à être utilisé !
